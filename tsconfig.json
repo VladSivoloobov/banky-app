@@ -3,15 +3,14 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+      "@/*": ["./src/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@const/*": ["./src/shared/const/*"],
+      "@ui/*": ["./src/shared/ui/*"],
+      "@widgets/*": ["./src/widgets/*"]
+    },
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }

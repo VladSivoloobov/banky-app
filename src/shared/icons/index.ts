@@ -1,0 +1,12 @@
+export { BonusesIcon } from './BonusesIcon';
+export { DeliveryIcon } from './DeliveryIcon';
+export { EarthIcon } from './EarthIcon';
+export { LogoIcon } from './LogoIcon';
+export { PlusIcon } from './PlusIcon';
+export { ProfileIcon } from './ProfileIcon';
+export { QrCodeIcon } from './QrCodeIcon';
+export { AnalyticsIcon } from './tabbar-icons/AnalyticsIcon';
+export { ChatsIcon } from './tabbar-icons/ChatsIcon';
+export { HistoryIcon } from './tabbar-icons/HistoryIcon';
+export { HomeIcon } from './tabbar-icons/HomeIcon';
+export { PaymentIcon } from './tabbar-icons/PaymentIcon';
