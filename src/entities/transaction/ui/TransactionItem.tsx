@@ -6,32 +6,36 @@ import UText from '@/shared/ui/utext';
 import { Image, StyleSheet, View } from 'react-native';
 import { TransactionItemProps } from './types';
 
-export function TransactionItem(props: TransactionItemProps) {
+export function TransactionItem({
+  style,
+  transaction,
+  ...props
+}: TransactionItemProps) {
   const dateService = useInject(DateService);
 
   return (
-    <View style={styles.transactionItem}>
+    <View {...props} style={[styles.transactionItem, style]}>
       <Image
         style={styles.transactionAvatar}
-        source={{ uri: props.transaction.company.avatar }}
+        source={{ uri: transaction.company.avatar }}
       />
       <View style={styles.transactionCompany}>
         <UText size='xs' style={styles.transactionName}>
-          {props.transaction.company.name}
+          {transaction.company.name}
         </UText>
         <View style={styles.transactionTypeWrapper}>
           <Circle />
           <UText size='xs' style={styles.transactionType}>
-            {props.transaction.transactionType}
+            {transaction.transactionType}
           </UText>
         </View>
       </View>
       <View style={styles.transactionPriceAndDateWrapper}>
         <UText size='xs' weight={500} style={styles.transactionCost}>
-          ${props.transaction.cost}
+          ${transaction.cost}
         </UText>
         <UText size='xs' style={styles.transactionDate}>
-          {dateService.createShortDate(props.transaction.date)}
+          {dateService.createShortDate(transaction.date)}
         </UText>
       </View>
     </View>
