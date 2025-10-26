@@ -1,4 +1,7 @@
 import { ITransaction, TransactionItem } from '@/entities/transaction';
+import ManImage from '@/shared/assets/images/avatars/man.png';
+import NetflixImage from '@/shared/assets/images/avatars/netfilx.png';
+import StarBucksImage from '@/shared/assets/images/avatars/starbucks.png';
 import { margins } from '@/shared/const';
 import TransactionListHeader from '@/shared/ui/transaction-list-header';
 import { SectionList, SectionListData, View } from 'react-native';
@@ -10,11 +13,10 @@ const DATA: SectionListData<ITransaction, { title: string }>[] = [
       {
         company: {
           name: 'Matthew Billson',
-          avatar:
-            'https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png',
+          avatar: ManImage,
         },
         cost: 56.19,
-        date: new Date(),
+        date: new Date(1717924097 * 1000),
         transactionType: 'Money Transfer',
       },
     ],
@@ -25,21 +27,19 @@ const DATA: SectionListData<ITransaction, { title: string }>[] = [
       {
         company: {
           name: 'Starbucks',
-          avatar:
-            'https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png',
+          avatar: StarBucksImage,
         },
-        cost: 12.2,
-        date: new Date(),
+        cost: 122.47,
+        date: new Date(1717863677 * 1000),
         transactionType: 'Entertainment',
       },
       {
         company: {
           name: 'Netflix',
-          avatar:
-            'https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png',
+          avatar: NetflixImage,
         },
         cost: 13.17,
-        date: new Date(),
+        date: new Date(1717825997 * 1000),
         transactionType: 'Entertainment',
       },
     ],

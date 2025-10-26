@@ -1,4 +1,4 @@
-import { colors } from '@/shared/const';
+import { colors, margins } from '@/shared/const';
 import { useInject } from '@/shared/hooks/useInject';
 import { DateService } from '@/shared/lib';
 import { Circle } from '@/shared/ui/circle';
@@ -17,7 +17,7 @@ export function TransactionItem({
     <View {...props} style={[styles.transactionItem, style]}>
       <Image
         style={styles.transactionAvatar}
-        source={{ uri: transaction.company.avatar }}
+        source={transaction.company.avatar}
       />
       <View style={styles.transactionCompany}>
         <UText size='xs' style={styles.transactionName}>
@@ -58,6 +58,8 @@ const styles = StyleSheet.create({
   transactionAvatar: {
     height: 36,
     width: 36,
+    marginRight: margins.xm,
+    borderRadius: 12,
   },
   transactionCompany: {
     marginRight: 'auto',

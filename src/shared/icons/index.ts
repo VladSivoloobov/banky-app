@@ -1,10 +1,12 @@
 export { BonusesIcon } from './BonusesIcon';
 export { DeliveryIcon } from './DeliveryIcon';
 export { EarthIcon } from './EarthIcon';
+export { LeftArrowIcon } from './LeftArrowIcon';
 export { LogoIcon } from './LogoIcon';
 export { PlusIcon } from './PlusIcon';
 export { ProfileIcon } from './ProfileIcon';
 export { QrCodeIcon } from './QrCodeIcon';
+export { ReadNotificationsIcon } from './ReadNotificationsIcon';
 export { AnalyticsIcon } from './tabbar-icons/AnalyticsIcon';
 export { ChatsIcon } from './tabbar-icons/ChatsIcon';
 export { HistoryIcon } from './tabbar-icons/HistoryIcon';

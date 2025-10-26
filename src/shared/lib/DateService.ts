@@ -25,8 +25,8 @@ export class DateService {
       hour12: false,
     };
 
-    const formatted = date.toLocaleDateString('en-US', options);
+    const formatted = date.toLocaleString('en-US', options);
 
-    return formatted;
+    return formatted.replace(' at', ',');
   }
 }

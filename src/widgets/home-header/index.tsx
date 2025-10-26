@@ -1,13 +1,21 @@
 import { QrCodeIcon } from '@/shared/icons';
 import { ProfileButton } from '@/shared/ui/profile-button';
-import { StyleSheet, View } from 'react-native';
+import { useRouter } from 'expo-router';
+import { Pressable, StyleSheet } from 'react-native';
 
 export function HomeHeader() {
+  const navigator = useRouter();
+
   return (
-    <View style={styles.profileHeader}>
+    <Pressable
+      onPress={() => {
+        navigator.push('/(tabs)/(home)/notifications');
+      }}
+      style={styles.profileHeader}
+    >
       <ProfileButton name='Charlotte' />
       <QrCodeIcon style={styles.qrCodeIcon} />
-    </View>
+    </Pressable>
   );
 }
 
