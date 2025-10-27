@@ -6,6 +6,19 @@ import UText from '@/shared/ui/utext';
 import { Image, StyleSheet, View } from 'react-native';
 import { TransactionItemProps } from './types';
 
+const getTransactionTypeColor = (type: string): string => {
+  switch (type) {
+    case 'Money Transfer':
+      return colors.secondaryOrange;
+    case 'Food':
+      return colors.orange;
+    case 'Entertainment':
+      return colors.tertiaryOrange;
+    default:
+      return colors.secondaryOrange;
+  }
+};
+
 export function TransactionItem({
   style,
   transaction,
@@ -24,7 +37,7 @@ export function TransactionItem({
           {transaction.company.name}
         </UText>
         <View style={styles.transactionTypeWrapper}>
-          <Circle />
+          <Circle color={getTransactionTypeColor(transaction.transactionType)} />
           <UText size='xs' style={styles.transactionType}>
             {transaction.transactionType}
           </UText>

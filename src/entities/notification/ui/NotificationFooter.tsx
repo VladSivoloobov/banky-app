@@ -8,10 +8,6 @@ interface NotificationFooterProps {
   category: string;
 }
 
-/**
- * Notification footer component
- * Single Responsibility: Display notification date and category
- */
 export function NotificationFooter({ date, category }: NotificationFooterProps) {
   return (
     <UText size='xs' style={styles.footer}>

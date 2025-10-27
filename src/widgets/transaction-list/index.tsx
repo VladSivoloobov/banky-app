@@ -31,7 +31,7 @@ const DATA: SectionListData<ITransaction, { title: string }>[] = [
         },
         cost: 122.47,
         date: new Date(1717863677 * 1000),
-        transactionType: 'Entertainment',
+        transactionType: 'Food',
       },
       {
         company: {

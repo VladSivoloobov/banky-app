@@ -5,10 +5,6 @@ interface UnreadIndicatorProps {
   isRead?: boolean;
 }
 
-/**
- * Unread indicator component
- * Single Responsibility: Display unread status indicator
- */
 export function UnreadIndicator({ isRead }: UnreadIndicatorProps) {
   if (isRead) {
     return null;

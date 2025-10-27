@@ -7,10 +7,6 @@ interface SecurityContentProps {
   notification: ISecurityNotification;
 }
 
-/**
- * Security notification content component
- * Single Responsibility: Display security-specific information
- */
 export function SecurityContent({ notification }: SecurityContentProps) {
   return (
     <>

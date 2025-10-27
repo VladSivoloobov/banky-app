@@ -1,8 +1,3 @@
-/**
- * Formatting utilities for notifications
- * Following DRY principle - centralized formatting logic
- */
-
 export const formatBalance = (balance: number): string => {
   return balance.toLocaleString('en-US', {
     minimumFractionDigits: 2,
@@ -25,4 +20,3 @@ export const formatNotificationDate = (date: Date): string => {
 
   return `${day} ${month} ${year}, ${hours}:${minutes}`;
 };
-

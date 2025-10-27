@@ -8,16 +8,12 @@ interface PaymentContentProps {
   notification: IPaymentNotification;
 }
 
-/**
- * Payment notification content component
- * Single Responsibility: Display payment-specific information
- */
 export function PaymentContent({ notification }: PaymentContentProps) {
   const formattedAmount = formatAmount(notification.amount);
 
   return (
     <>
-      <UText weight={600} size='xl' style={styles.amount}>
+      <UText weight={600} size='l' style={styles.amount}>
         {formattedAmount}
       </UText>
       <UText size='xs' style={styles.secondaryText}>

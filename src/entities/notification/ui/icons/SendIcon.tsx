@@ -1,10 +1,10 @@
 import { colors } from '@/shared/const';
 import Svg, { ClipPath, Defs, G, Path, Rect } from 'react-native-svg';
 
-export function PaymentIcon() {
+export function SendIcon() {
   return (
     <Svg width='20' height='20' viewBox='0 0 20 20' fill='none'>
-      <G clipPath='url(#clip0_8059_66)'>
+      <G clipPath='url(#clip0_8059_66_send)'>
         <Path
           d='M6.66667 3.33333L10 3.97496e-08L13.3333 3.33333L13.3333 4.16667L11.25 4.16667L11.25 12.5L8.75 12.5L8.75 4.16667L6.66667 4.16667L6.66667 3.33333Z'
           fill={colors.orange}
@@ -18,7 +18,7 @@ export function PaymentIcon() {
         />
       </G>
       <Defs>
-        <ClipPath id='clip0_8059_66'>
+        <ClipPath id='clip0_8059_66_send'>
           <Rect
             width='20'
             height='20'
@@ -30,3 +30,4 @@ export function PaymentIcon() {
     </Svg>
   );
 }
+

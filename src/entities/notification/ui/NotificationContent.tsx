@@ -8,11 +8,6 @@ interface NotificationContentProps {
   notification: INotification;
 }
 
-/**
- * Notification content component
- * Single Responsibility: Route to appropriate content component based on type
- * Following Open/Closed Principle - easy to extend with new notification types
- */
 export function NotificationContent({ notification }: NotificationContentProps) {
   switch (notification.type) {
     case 'payment':

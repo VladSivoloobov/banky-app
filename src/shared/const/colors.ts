@@ -8,6 +8,7 @@ export const colors = {
   tertiaryBlack: '#1F1F1F',
   secondaryGray: '#AEAEAE',
   secondaryOrange: '#CC3F02',
+  tertiaryOrange: '#FF9332',
   green: '#00D632',
   red: '#FF3B30',
 };

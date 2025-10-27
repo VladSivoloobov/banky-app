@@ -11,7 +11,7 @@ export const mockNotifications: INotificationSection[] = [
         amount: 110,
         company: {
           name: 'Anna',
-          avatar: require('@/shared/assets/images/avatars/man.png'),
+          avatar: require('@/shared/assets/images/avatars/anna.jpg'),
         },
         accountNumber: 'Debit •• 4385',
         balance: 4098.12,

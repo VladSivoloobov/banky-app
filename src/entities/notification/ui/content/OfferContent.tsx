@@ -7,10 +7,6 @@ interface OfferContentProps {
   notification: IOfferNotification;
 }
 
-/**
- * Offer notification content component
- * Single Responsibility: Display offer-specific message
- */
 export function OfferContent({ notification }: OfferContentProps) {
   return (
     <UText size='xs' style={styles.messageText}>

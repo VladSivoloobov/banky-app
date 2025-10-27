@@ -11,18 +11,6 @@ interface NotificationProps {
   notification: INotification;
 }
 
-/**
- * Main Notification component
- * Following SOLID principles:
- * - Single Responsibility: Orchestrates notification UI composition
- * - Open/Closed: Easy to extend without modification
- * - Dependency Inversion: Depends on abstractions (child components)
- *
- * Following Clean Code:
- * - Simple, readable structure
- * - Declarative composition
- * - Clear component hierarchy
- */
 export function Notification({ notification }: NotificationProps) {
   return (
     <View style={styles.container}>
@@ -45,7 +33,7 @@ export function Notification({ notification }: NotificationProps) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    paddingVertical: margins.s,
+    paddingVertical: margins.xm,
     paddingHorizontal: margins.s,
     backgroundColor: colors.black,
     alignItems: 'flex-start',

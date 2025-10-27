@@ -10,10 +10,6 @@ interface NotificationIconProps {
   type: NotificationType;
 }
 
-/**
- * Map of notification types to their corresponding icon components
- * Following Open/Closed Principle - easy to extend with new notification types
- */
 const iconMap: Record<NotificationType, React.FC> = {
   travel: TravelIcon,
   security: SecurityIcon,
@@ -21,11 +17,6 @@ const iconMap: Record<NotificationType, React.FC> = {
   offer: OfferIcon,
 };
 
-/**
- * Notification icon component
- * Single Responsibility: Display appropriate icon based on notification type
- * Following Strategy Pattern for icon selection
- */
 export function NotificationIcon({ type }: NotificationIconProps) {
   const Icon = iconMap[type];
 
@@ -40,7 +31,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     width: 48,
     height: 48,
-    borderRadius: 24,
+    borderRadius: 16,
     backgroundColor: colors.secondaryBlack,
     justifyContent: 'center',
     alignItems: 'center',

@@ -7,10 +7,6 @@ interface NotificationHeaderProps {
   notification: INotification;
 }
 
-/**
- * Notification header component
- * Single Responsibility: Display notification title
- */
 export function NotificationHeader({ notification }: NotificationHeaderProps) {
   return (
     <UText weight={500} size='m' style={styles.title}>

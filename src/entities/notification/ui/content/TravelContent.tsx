@@ -7,10 +7,6 @@ interface TravelContentProps {
   notification: ITravelNotification;
 }
 
-/**
- * Travel notification content component
- * Single Responsibility: Display travel-specific message
- */
 export function TravelContent({ notification }: TravelContentProps) {
   return (
     <UText size='xs' style={styles.messageText}>

@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
   sectionHeader: {
     backgroundColor: colors.black,
     paddingHorizontal: margins.s,
-    paddingVertical: margins.xm,
     paddingTop: margins.s,
   },
   sectionTitle: {
