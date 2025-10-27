@@ -1,51 +1,57 @@
-import { useInject } from '@/shared/hooks/useInject';
-import { DateService } from '@/shared/lib';
-import UText from '@/shared/ui/utext';
-import { Image, View } from 'react-native';
-import { INotification, NotificationType } from '../model/INotification';
+import { colors, margins } from '@/shared/const';
+import { StyleSheet, View } from 'react-native';
+import { INotification } from '../model/INotification';
+import { NotificationAvatar } from './NotificationAvatar';
+import { NotificationContent } from './NotificationContent';
+import { NotificationFooter } from './NotificationFooter';
+import { NotificationHeader } from './NotificationHeader';
+import { UnreadIndicator } from './UnreadIndicator';
 
-const NotificationFooter = ({
-  date,
-  type,
-}: {
-  date: Date;
-  type: NotificationType;
-}) => {
-  const dateService = useInject(DateService);
+interface NotificationProps {
+  notification: INotification;
+}
 
+/**
+ * Main Notification component
+ * Following SOLID principles:
+ * - Single Responsibility: Orchestrates notification UI composition
+ * - Open/Closed: Easy to extend without modification
+ * - Dependency Inversion: Depends on abstractions (child components)
+ *
+ * Following Clean Code:
+ * - Simple, readable structure
+ * - Declarative composition
+ * - Clear component hierarchy
+ */
+export function Notification({ notification }: NotificationProps) {
   return (
-    <UText>
-      {dateService.createShortDate(date)} · {type}
-    </UText>
-  );
-};
+    <View style={styles.container}>
+      <NotificationAvatar notification={notification} />
 
-const notificationContent = {
-  payment: (props: INotification) => (
-    <>
-      <UText>{props.type === 'payment' && props.amount}</UText>
-      <UText>{props.type === 'payment' && props.accountNumber}</UText>
-      <UText>{props.type === 'payment' && props.balance}</UText>
-    </>
-  ),
-  message: (props: INotification) => (
-    <>
-      <UText>{props.type === 'message' && props.message}</UText>
-    </>
-  ),
-};
-
-export function Notification(props: INotification) {
-  return (
-    <View>
-      <Image />
-      <View>
-        <UText weight={500} size='xs'>
-          {props.title}
-        </UText>
-        {notificationContent[props.type](props)}
-        <NotificationFooter type={props.type} date={props.date} />
+      <View style={styles.content}>
+        <NotificationHeader notification={notification} />
+        <NotificationContent notification={notification} />
+        <NotificationFooter
+          date={notification.date}
+          category={notification.category}
+        />
       </View>
+
+      <UnreadIndicator isRead={notification.isRead} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    paddingVertical: margins.s,
+    paddingHorizontal: margins.s,
+    backgroundColor: colors.black,
+    alignItems: 'flex-start',
+  },
+  content: {
+    flex: 1,
+    gap: 4,
+  },
+});

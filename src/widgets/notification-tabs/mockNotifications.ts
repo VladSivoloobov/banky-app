@@ -26,9 +26,9 @@ export const mockNotifications: INotificationSection[] = [
     data: [
       {
         id: '2',
-        type: 'message',
+        type: 'travel',
         title: 'See our limited offer!',
-        message: "Would you like to visit new countries? Maybe it's your time!",
+        message: "Would you like to visit new countries?\nMaybe it's your time!",
         date: new Date('2025-06-16T23:08:00'),
         category: 'Travel',
         isRead: true,
@@ -55,10 +55,10 @@ export const mockNotifications: INotificationSection[] = [
     data: [
       {
         id: '4',
-        type: 'message',
+        type: 'security',
         title: 'New login into account',
         description: 'You have logged in from a new location:',
-        message: 'iOS 26.0.1 · 109.255.84.7 · Spain',
+        details: 'iOS 26.0.1 · 109.255.84.7 · Spain',
         date: new Date('2025-03-24T15:44:00'),
         category: 'Security',
         isRead: true,
