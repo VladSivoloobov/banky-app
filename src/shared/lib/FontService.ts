@@ -22,8 +22,6 @@ export class FontService {
     const capitalizedFontName = this.stringService.capitalize(fontName);
     const capitalizedFontWeight = fontWeight + weightMapping[fontWeight];
 
-    console.log(`${capitalizedFontName}-${weightMapping[fontWeight]}`);
-
     return Platform.select({
       ios: `${capitalizedFontName}-${weightMapping[fontWeight]}`,
       android: `${capitalizedFontName}-${capitalizedFontWeight}`,

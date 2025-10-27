@@ -16,10 +16,10 @@ export function PaymentContent({ notification }: PaymentContentProps) {
       <UText weight={600} size='l' style={styles.amount}>
         {formattedAmount}
       </UText>
-      <UText size='xs' style={styles.secondaryText}>
+      <UText size='xs' style={styles.accountNumber}>
         {notification.accountNumber}
       </UText>
-      <UText size='xs' style={styles.secondaryText}>
+      <UText size='xs' style={styles.balance}>
         ${formatBalance(notification.balance)}
       </UText>
     </>
@@ -30,7 +30,12 @@ const styles = StyleSheet.create({
   amount: {
     color: colors.orange,
   },
-  secondaryText: {
+  accountNumber: {
     color: colors.secondaryGray,
+    marginTop: 2,
+  },
+  balance: {
+    color: colors.secondaryGray,
+    marginTop: 2,
   },
 });
