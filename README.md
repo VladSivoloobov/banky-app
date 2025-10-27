@@ -1,50 +1,121 @@
-# Welcome to your Expo app 👋
+# Banky App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Современное банковское мобильное приложение, разработанное с использованием React Native и Expo. Реализовано в рамках тестового задания с упором на чистоту кода, архитектуру и внимание к деталям.
 
-## Get started
+## Дизайн
 
-1. Install dependencies
+Дизайн приложения доступен в Figma:  
+[**Посмотреть дизайн →**](https://www.figma.com/design/TUs0yc4YQtkpMhHvawK5iG/Test?node-id=2118-8945&t=ubEIZdRi09kPbPPr-0)
 
-   ```bash
-   npm install
-   ```
+## Технологии
 
-2. Start the app
+- **React Native** + **Expo** — кросс-платформенная разработка
+- **TypeScript** — строгая типизация
+- **React Navigation** — навигация
+- **Inversify** — dependency injection
+- **React Native SVG** — работа с векторной графикой
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Установка и запуск
 
 ```bash
-npm run reset-project
+# Установка зависимостей
+npm install
+
+# Запуск в режиме разработки
+npm start
+
+# Запуск на iOS
+npm run ios
+
+# Запуск на Android
+npm run android
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Архитектура
 
-## Learn more
+Проект построен по методологии **Feature-Sliced Design (FSD)**, что обеспечивает:
 
-To learn more about developing your project with Expo, look at the following resources:
+- Четкое разделение ответственности
+- Легкую масштабируемость
+- Простоту поддержки
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```
+src/
+├── app/              # Инициализация приложения, роутинг
+├── screens/          # Экраны приложения
+├── widgets/          # Составные блоки (header, cards, lists)
+├── entities/         # Бизнес-сущности
+│   ├── notification/ # Сущность уведомлений
+│   │   ├── model/    # Типы и интерфейсы
+│   │   ├── ui/       # UI компоненты
+│   │   │   ├── content/      # Типы контента уведомлений
+│   │   │   └── icons/        # SVG иконки
+│   │   └── lib/      # Утилиты (форматирование)
+│   └── transaction/  # Сущность транзакций
+└── shared/           # Переиспользуемые компоненты и утилиты
+    ├── ui/           # UI-кит (кнопки, текст, контейнеры)
+    ├── const/        # Константы (цвета, отступы, шрифты)
+    ├── lib/          # Сервисы и утилиты
+    └── hooks/        # Переиспользуемые хуки
+```
 
-## Join the community
+Особенности реализации
 
-Join our community of developers creating universal apps.
+### Типографика и отступы
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Тщательно подобранные значения согласно дизайну:
+
+```typescript
+// Размеры шрифтов
+fonts = {
+  s: 12, // Мелкий текст
+  xs: 14, // Основной текст уведомлений
+  m: 16, // Заголовки
+  l: 21, // Цены платежей
+  xl: 30, // Крупные элементы
+};
+
+// Отступы
+margins = {
+  xs: 6,
+  xxs: 8,
+  xm: 12,
+  s: 16, // Основной отступ
+  xxm: 24,
+  m: 32,
+};
+```
+
+### Цветовая палитра
+
+Система цветов с семантическими названиями:
+
+```typescript
+colors = {
+  orange: '#FE5900', // Основной акцент
+  secondaryOrange: '#CC3F02', // Money Transfer
+  tertiaryOrange: '#FF9332', // Entertainment
+  darkGray: '#616161', // Footer текст
+  secondaryGray: '#AEAEAE', // Вторичный текст
+  tertiaryBlack: '#1F1F1F', // Разделители
+  // ... и другие
+};
+```
+
+## Структура компонентов
+
+### Компонент Notification
+
+Главный компонент построен по принципу композиции:
+
+```typescript
+<Notification>
+  <NotificationAvatar /> // Аватар или иконка
+  <NotificationHeader /> // Заголовок
+  <NotificationContent /> // Динамический контент
+  <NotificationFooter /> // Дата и категория
+  <UnreadIndicator /> // Индикатор непрочитанного
+</Notification>
+```
+
+Каждый подкомпонент независим, тестируем и переиспользуем.
