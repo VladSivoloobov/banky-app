@@ -6,4 +6,6 @@ export const colors = {
   secondaryBlack: '#0F0F0F',
   secondaryGray: '#AEAEAE',
   secondaryOrange: '#CC3F02',
+  green: '#00D632',
+  red: '#FF3B30',
 };

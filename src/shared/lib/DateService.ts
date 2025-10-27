@@ -29,4 +29,20 @@ export class DateService {
 
     return formatted.replace(' at', ',');
   }
+
+  createFullDateTime(date: Date) {
+    const options: Intl.DateTimeFormatOptions = {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    };
+
+    const formatted = date.toLocaleString('en-US', options);
+    const [datePart, timePart] = formatted.split(' at ');
+    
+    return `${datePart}, ${timePart}`;
+  }
 }

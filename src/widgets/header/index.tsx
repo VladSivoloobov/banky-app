@@ -1,4 +1,4 @@
-import { colors } from '@/shared/const';
+import { colors, margins } from '@/shared/const';
 import { LeftArrowIcon, ReadNotificationsIcon } from '@/shared/icons';
 import SafeArea from '@/shared/ui/safe-area';
 import UText from '@/shared/ui/utext';
@@ -14,7 +14,7 @@ export function Header() {
         <Pressable onPress={router.back}>
           <LeftArrowIcon />
         </Pressable>
-        <UText style={{ fontSize: 21 }} weight={500}>
+        <UText size="l" weight={500}>
           Notifications
         </UText>
         <ReadNotificationsIcon />
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 16,
+    padding: margins.s,
   },
 });
